@@ -14,7 +14,7 @@ class Authentication:
 
         self.user = authenticate(username=self.username, password=self.raw_password)
         if not self.user:
-            return {'status': False, 'description': 'User or password not found!', 'redirect': ''}
+            return {'success': False, 'description': 'User or password not found!', 'redirect': ''}
 
         login(request, self.user)
 

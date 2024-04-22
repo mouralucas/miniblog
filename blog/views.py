@@ -17,6 +17,15 @@ class Feed(View):
         return render(self.request, template_name='blog/landing_page.html', context=response)
 
 
+class UserPage(View):
+    @method_decorator(login_required)
+    def get(self, *args, **kwargs):
+
+        response = service.blog.Blog().get_user_posts(user_id=self.request.user.id)
+
+        return render(self.request, template_name='blog/user_page.html', context=response)
+
+
 class CreatePost(View):
     def get(self, *args, **kwargs):
         # Get the form to create a new post

@@ -3,7 +3,7 @@
 This is a prototype for a blog. 
 This was a simple build just to show how it can be done.
 
-Not all errors and exceptions were handled and the tests do not cover all cases and edge cases.
+Not all errors and exceptions were handled and the tests may not cover all cases and edge cases.
 
 
 # Usage

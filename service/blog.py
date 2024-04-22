@@ -27,6 +27,16 @@ class Blog:
 
         return response
 
+    def get_user_posts(self, user_id):
+        posts = Post.objects.filter(user_id=user_id).order_by('-created_at')
+
+        response = {
+            'success': True,
+            'posts': posts,
+        }
+
+        return response
+
     def create_post(self, form, user):
         new_post = Post(title=form.cleaned_data.get('title'), content=form.cleaned_data.get('content'), status=form.cleaned_data.get('status'))
         new_post.user_id = user.id
